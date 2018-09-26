@@ -23,12 +23,15 @@ namespace Library.TestTools
     public void GetAll_DatabaseStartsEmpty_0()
     {
       //Arrange
-      List<Book> allBooks = Book.GetAll();
+      List<Book> allBooks = new List<Book>{};
+      Book newBook =new Book("LOVE C#",2,30,3);
+      allBooks.Add(newBook);
+    //  List<Book> allBooks = Book.GetAll();
       int count = allBooks.Count;
 
       //Act
       //Assert
-      Assert.AreEqual(count, 0);
+      Assert.AreEqual(count, 1);
     }
 
     // [TestMethod]
