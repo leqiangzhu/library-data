@@ -1,0 +1,4 @@
+/Users/Guest/Desktop/Library.Solution/Library.Tests/bin/Debug/netcoreapp1.0.4/Library.Tests.deps.json
+/Users/Guest/Desktop/Library.Solution/Library.Tests/bin/Debug/netcoreapp1.0.4/Library.Tests.runtimeconfig.json
+/Users/Guest/Desktop/Library.Solution/Library.Tests/bin/Debug/netcoreapp1.0.4/Library.Tests.runtimeconfig.dev.json
+/Users/Guest/Desktop/Library.Solution/Library.Tests/obj/Debug/netcoreapp1.0.4/Library.Tests.AssemblyInfo.cs
