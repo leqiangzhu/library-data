@@ -8,10 +8,10 @@ namespace Library.Models
 {
   public  class Book
   {
-    private  string _bookName { get; set; }
-    private  int _bookId{ get; set; }
-    private  int _authorId { get; set; }
-    private  int _bookCopies{ get; set; }
+    private  string _bookName;
+    private  int _bookId;
+    private  int _authorId ;
+    private  int _bookCopies;
 
     public  Book(string bookName,int authorId, int bookCopies,int bookId=0){
         _bookName=bookName;
@@ -20,6 +20,21 @@ namespace Library.Models
         _bookCopies=bookCopies;
 
     }
+
+    public string GetName(){
+      return _bookName;
+    }
+    public int GetId(){
+      return _bookId;
+    }
+    public int GetAuthorId(){
+      return _authorId;
+    }
+    public int GetBookCopies(){
+      return _bookCopies;
+    }
+
+
 
     public override bool Equals(System.Object otherBook)
     {
@@ -57,8 +72,8 @@ namespace Library.Models
            {
                int bookId = rdr.GetInt32(0);
                string bookName = rdr.GetString(1);
-               int authorId=rdr.GetInt32(4);
-               int bookCopies=rdr.GetInt32(2);
+               int authorId=rdr.GetInt32(2);
+               int bookCopies=rdr.GetInt32(3);
                Book newBook = new Book(bookName, authorId,bookCopies,bookId);
                allBooks.Add(newBook);
            }
@@ -76,7 +91,7 @@ namespace Library.Models
            MySqlConnection conn = DB.Connection();
            conn.Open();
            var cmd = conn.CreateCommand() as MySqlCommand;
-           cmd.CommandText = @"INSERT INTO books (book_name,author_id,book_copies) VALUES (@bookName,@authorId,@bookCopies,);";
+           cmd.CommandText = @"INSERT INTO books (book_name,author_id,book_copies) VALUES (@bookName,@authorId,@bookCopies);";
 
           //  MySqlParameter stylistName1 = new MySqlParameter();
           //  stylistName1.ParameterName = "@bookName";
@@ -114,8 +129,8 @@ namespace Library.Models
 
            bookId = rdr.GetInt32(0);
            bookName = rdr.GetString(1);
-           authorId=rdr.GetInt32(4);
-           bookCopies=rdr.GetInt32(2);
+           authorId=rdr.GetInt32(2);
+           bookCopies=rdr.GetInt32(3);
 
         }
           Book foundBook = new Book(bookName, authorId,bookCopies,bookId);
@@ -149,8 +164,8 @@ namespace Library.Models
         {
           bookId = rdr.GetInt32(0);
           bookName = rdr.GetString(1);
-          authorId=rdr.GetInt32(4);
-          bookCopies=rdr.GetInt32(2);
+          authorId=rdr.GetInt32(2);
+          bookCopies=rdr.GetInt32(3);
 
         }
           Book foundBook = new Book(bookName, authorId,bookCopies,bookId);

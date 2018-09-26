@@ -1,0 +1,49 @@
+@{
+  Layout = "_Layout";
+}
+@using Library.Models;
+
+
+
+
+<div class='container'>
+
+
+  <br/>
+  <form action="/book" method="post">
+  <label for="BookName">SEARCH BY ID</label>
+  <br/>
+  <input id="bookId" name="bookSearchId" type="text">
+  <button type="submit" class='btn btn-success'> Confirm</button>
+  </form>
+
+
+  <h2>All the Book List</h2>
+
+  @foreach (Book book in @Book.GetAll())
+  {
+    <h3><a href='/book/@book.GetId()'>@book.GetName()</a> </h3>
+  }
+  <hr>
+
+  <form action="/book" method="post">
+  <label for="BookName">Add a new book</label>
+  <br/>
+  <input id="BookName" name="bookName" type="text">
+  <input id="authorId" name="authorId" type="text">
+  <input id="BookCopies" name="bookCopies" type="text">
+  <button type="submit" class='btn btn-success'> Confirm</button>
+  </form>
+
+
+  <!-- <a href='/Book/new'><button class='btn btn-warning'>Add Stylist</button></a> -->
+  <a href='/Patron'><button class='btn btn-info'>Manage  Patron</button></a>
+  <a href='/'><button class='btn btn-success'>Back Home</button></a>
+
+</br>
+</br>
+  <!-- <form action="/stylist/deleteAll" method="post">
+       <!-- <label for="StylistName">Add a new client to this stylist</label>
+      <input id="StylistName" name="clientName" type="text"> -->
+      <button type="submit" class='btn btn-danger' >DeleteAll</button>
+    </form> -->
