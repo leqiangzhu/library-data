@@ -10,7 +10,7 @@
 
 
   <br/>
-  <form action="/book" method="post">
+  <form action="/search" method="post">
   <label for="BookName">SEARCH BY ID</label>
   <br/>
   <input id="bookSearchId" name="bookSearchId" type="text">
@@ -20,23 +20,93 @@
 
   <h2>All the Book List</h2>
 
-  @foreach (Book book in @Book.GetAll())
+<table>
+  <tr>
+    <th>Book id</th>
+    <th>Book name</th>
+    <th>anthor</th>
+    <th>BookCopies</th>
+    <th>NR</th>
+  </tr>
+  <tr>
+  
+    <td>   
+      @foreach (Book book in @Book.GetAll())
   {
-    <h3><a href='/book/@book.GetId()'>@book.GetName()</a> </h3>
+    <h3><a href='/book/@book.GetId()'>@book.GetId()</a> </h3>
   }
-  <hr>
+  </td>
+    <td>
+          @foreach (Book book in @Book.GetAll())
+  {
+    <h3>@book.GetName() </h3>
+  }
+    </td>
+       <td>
+  
+    </td>
+    <td>
+          @foreach (Book book in @Book.GetAll())
+  {
+    <h3>@book.GetBookCopies()</h3>
+  }
+    </td>
+  </tr>
+</table>
 
-  <!-- <form action="/book" method="post">
-  <label for="BookName">Add a new book</label>
+ 
+
+
+  <hr>
+<!-- <table>
+  
+  
+    <form action="/book" method="post">
+  <label for="BookName">Add a new book </label>
+  <tr>
+    <th>bookname</th>
+    <th>authorId</th>
+    <th>bookCopies</th>
+    
+  </tr>
+  <br/>
+ 
+   <td>
+  <input id="BookName" name="bookName" type="text">
+ 
+  </td>
+  <td>
+  <input id="authorId" name="authorId" type="text">
+  </td>
+  <td>
+  <input id="BookCopies" name="bookCopies" type="text">
+  </td>
+  <button type="submit" class='btn btn-success'> Confirm</button>
+  </form>
+  </table> -->
+ 
+ 
+  
+  <h4> ADD NEW BOOK </h4>
+  <form action="/book" method="post">
+  <label for="BookName">Add a bookname</label>
   <br/>
   <input id="BookName" name="bookName" type="text">
+   <br/>
+ <label for="BookName">authorId</label>
+  <br/>
   <input id="authorId" name="authorId" type="text">
+   <br/>
+   <label for="BookName">bookCopies</label>
+    <br/>
   <input id="BookCopies" name="bookCopies" type="text">
+  <br/> <br/>
   <button type="submit" class='btn btn-success'> Confirm</button>
-  </form> -->
+  </form>
+ 
 
-
-  <!-- <a href='/Book/new'><button class='btn btn-warning'>Add Stylist</button></a> -->
+ <br/>
+  <!-- <a href='/Book/new'><button class='btn btn-warning'>Add Book</button></a> -->
   <a href='/Patron'><button class='btn btn-info'>Manage  Patron</button></a>
   <a href='/'><button class='btn btn-success'>Back Home</button></a>
 
@@ -46,4 +116,4 @@
        <!-- <label for="StylistName">Add a new client to this stylist</label>
       <input id="StylistName" name="clientName" type="text"> -->
       <button type="submit" class='btn btn-danger' >DeleteAll</button>
-    </form> -->
+    </form>

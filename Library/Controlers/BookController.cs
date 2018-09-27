@@ -14,17 +14,17 @@ namespace Library.Controllers
                return View(allBooks);
          }
 
-      //    [HttpPost("/book")]
-      // public ActionResult Create()
-      // {
-      //
-      // Book newBook = new Book (Request.Form["bookName"],
-      // Int32.Parse(Request.Form["authorId"]),Int32.Parse(Request.Form["bookCopies"]));
-      // newBook.Save();
-      // List<Book> allBooks = Book.GetAll();
-      // //return RedirectToAction("Index");
-      // return View("Index", allBooks);
-      // }
+         [HttpPost("/book")]
+      public ActionResult Create()
+      {
+      
+      Book newBook = new Book (Request.Form["bookName"],
+      Int32.Parse(Request.Form["authorId"]),Int32.Parse(Request.Form["bookCopies"]));
+      newBook.Save();
+      List<Book> allBooks = Book.GetAll();
+      //return RedirectToAction("Index");
+      return View("Index", allBooks);
+      }
 
         // this is a method to search book by id,
       //  [HttpPost("book/Search")]
@@ -39,16 +39,25 @@ namespace Library.Controllers
 
       //TEST Search
 
-      [HttpPost("/book")]
-     public ActionResult Search()
-     {
-       int SearchId=Int32.Parse(Request.Form["bookSearchId"]);
-       Book foundBook=Book.FindById(SearchId);
-       List<Book> foundBooks = Book.GetAll();
-       foundBooks.Add(foundBook);
-       return View("Index",foundBooks);
-     }
+    //   [HttpPost("/search")]
+    //  public ActionResult Search(int bookId)
+    //  {
+    //    int SearchId=Int32.Parse(Request.Form["bookSearchId"]);
+    //    Book foundBook=Book.FindById(SearchId);
+    //    List<Book> foundBooks = Book.GetAll();
+    //    foundBooks.Add(foundBook);
+    //    return View("search",foundBooks);
+    //  }
 
+      [HttpGet("/search")]
+     public ActionResult Search(int bookId)
+     {
+       //int SearchId=Int32.Parse(Request.Form["bookSearchId"]);
+       Book foundBook=Book.FindById(SearchId);
+      List<Book> foundBooks = Book.GetAll();
+      foundBooks.Add(foundBook);
+       return View(foundBooks);
+     }
 
 
 
