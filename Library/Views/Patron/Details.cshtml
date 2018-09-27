@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout"; 
+}
+@using Library.Models;
+
+<div class='container'>
+  
+  
+  <h2> @Model._patronName</h2>
+  <h2>check ou a book</h2>
+   <form action="./@Model._patronId" method="post">
+  <label for="BookName">please input the book Id</label>
+  <br/>
+  <input id="bookSearchId" name="bookSearchId" type="text">
+  <button type="submit" class='btn btn-success'> Confirm</button>
+  </form>
+
+    <br/>
+    <a href='/patron'><button class='btn btn-warning'>Back patron</button></a>
+    <a href='/'><button class='btn btn-success'>Back Home</button></a>
+       
+
+</div>

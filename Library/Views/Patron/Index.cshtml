@@ -23,7 +23,7 @@
     <td>
     @foreach (var  patron in Model)
   {
-   <a href="Patron/@patron._patronId"><h3>@patron._patronName </h3></a>
+   <a href='./@patron._patronId'><h3>@patron._patronName </h3></a>
   }
     </td>
     <td>
@@ -32,7 +32,7 @@
     <td>
       @foreach (var  patron in Model)
   {
-   <a href="Patron/@patron._patronId"><h3>@patron._availableNum </h3></a>
+   <h3>@patron._availableNum </h3>
   }
     </td>
   </tr>

@@ -57,7 +57,7 @@ namespace Library.Models
     {
         return this._bookName.GetHashCode();
     }
-
+ 
 
     public  static  List<Book> GetAll(){
       List<Book> allBooks = new List<Book> {};
@@ -181,6 +181,9 @@ namespace Library.Models
         return foundBook;
 
       }
+
+
+      
 
 
 

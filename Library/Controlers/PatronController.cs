@@ -14,23 +14,20 @@ namespace Library.Controllers
                return View(allPatrons);
          }
 
-        //   [HttpPost("/patron/{patronId}")]
-        // public ActionResult CreateBook(int patronId)
-        // {
-        //     Dictionary<string, object> model = new Dictionary<string, object>();
-        //     Patron selectpatron = Patron.FindById(patronId);
-        //     Book newBook= new Book( Request.Form["BookName"],patronId);
-        //     newBook.Save();
-        //     List<Book> patronBook = selectpatron.GetBooks();
-        //     // model.Add("patron", selectpatron);
-        //     // model.Add("Book", Request.Form["BookName"]);
-        //      model.Add("patron", selectpatron);
-        //      model.Add("Book", patronBook);
-        //     return View("Details", model);
-        // }
+          [HttpGet("/Patron/{patronId}")]
+        public ActionResult CreateBook(int patronId)
+        { 
+            Patron selectpatron = Patron.FindById(patronId);
+            return View("Details", selectpatron);
+        }
 
 
-
+           [HttpPost("/Patron/{patronId}")]
+        public ActionResult CreateBook(int patronId)
+        { 
+            Patron selectpatron = Patron.FindById(patronId);
+            return View("Details", selectpatron);
+        }
 
 
     }
