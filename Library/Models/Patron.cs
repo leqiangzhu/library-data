@@ -8,10 +8,11 @@ namespace Library.Models
 {
   public  class Patron
   {
-    private  string _patronName { get; set; }
-    private  int _patronId  { get; set; }
+    public  string _patronName { get; set; }
+    public  int _patronId  { get; set; }
   //  private  int _authorId={set;get};
   //  private  int _copiesNumber={set;get};
+    public int _availableNum=5;
 
     public  Patron(string patronName,int patronId=0){
         _patronName=patronName;
@@ -110,7 +111,7 @@ namespace Library.Models
         {
             conn.Dispose();
         }
-
+    
         return foundPatron;
 
       }

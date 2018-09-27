@@ -49,14 +49,15 @@ namespace Library.Controllers
     //    return View("search",foundBooks);
     //  }
 
-      [HttpGet("/search")]
+      [HttpPost("/search")]
      public ActionResult Search(int bookId)
      {
        //int SearchId=Int32.Parse(Request.Form["bookSearchId"]);
-       Book foundBook=Book.FindById(SearchId);
-      List<Book> foundBooks = Book.GetAll();
-      foundBooks.Add(foundBook);
-       return View(foundBooks);
+       Book foundBook=Book.FindById(bookId);
+     // List<Book> foundBooks = Book.GetAll();
+      //foundBooks.Add(foundBook);
+     
+     return View(foundBook);
      }
 
 

@@ -15,11 +15,13 @@
 
   <h2>All the Book List</h2>
 
-  @foreach (Book book in @Book.GetAll())
+  <!-- @foreach (Book book in @Book.GetAll())
   {
     <h3><a href='/book/@book.GetId()'>@book.GetName()</a> </h3>
   }
-  <hr>
+  <hr> -->
+
+           @Model.GetName()
 
 
 
@@ -32,6 +34,6 @@
 </br>
   <!-- <form action="/stylist/deleteAll" method="post">
        <!-- <label for="StylistName">Add a new client to this stylist</label>
-      <input id="StylistName" name="clientName" type="text"> -->
+      <input id="StylistName" name="clientName" type="text"> 
       <button type="submit" class='btn btn-danger' >DeleteAll</button>
     </form> -->

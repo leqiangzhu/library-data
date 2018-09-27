@@ -1,0 +1,42 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Library.Models;
+<h2>All the Patron List</h2>
+
+<table>
+  <tr>
+    <th>Patron id</th>
+    <th>Patron name</th>
+    <th>book-list</th>
+    <th>AvailableBook</th>
+  </tr>
+  <tr>
+    <td>
+    @foreach (var  patron in Model)
+  {
+    <h3>@patron._patronId </h3>
+  }
+    </td>
+   
+    <td>
+    @foreach (var  patron in Model)
+  {
+   <a href="Patron/@patron._patronId"><h3>@patron._patronName </h3></a>
+  }
+    </td>
+    <td>
+    
+    </td>
+    <td>
+      @foreach (var  patron in Model)
+  {
+   <a href="Patron/@patron._patronId"><h3>@patron._availableNum </h3></a>
+  }
+    </td>
+  </tr>
+</table>
+
+  <a href='/Book'><button class='btn btn-info'>Manage  Book</button></a>
+  <a href='/'><button class='btn btn-success'>Back Home</button></a>

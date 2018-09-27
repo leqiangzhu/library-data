@@ -64,7 +64,7 @@ namespace Library.Models
       MySqlConnection conn =DB.Connection();
       conn.Open();
       var cmd =conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText=@"SELECT * FROM books;";
+      cmd.CommandText=@"SELECT * FROM books ;";
 
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
 
@@ -91,7 +91,8 @@ namespace Library.Models
            MySqlConnection conn = DB.Connection();
            conn.Open();
            var cmd = conn.CreateCommand() as MySqlCommand;
-           cmd.CommandText = @"INSERT INTO books (book_name,author_id,book_copies) VALUES (@bookName,@authorId,@bookCopies);";
+           cmd.CommandText = @"INSERT INTO books (book_name,author_id,book_copies) VALUES (@bookName,@authorId,@bookCopies);
+                               INSERT INTO copies (book_copies) VALUES (@bookCopies)";
 
           //  MySqlParameter stylistName1 = new MySqlParameter();
           //  stylistName1.ParameterName = "@bookName";

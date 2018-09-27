@@ -30,16 +30,16 @@
   </tr>
   <tr>
   
-    <td>   
+  <td>   
       @foreach (Book book in @Book.GetAll())
   {
-    <h3><a href='/book/@book.GetId()'>@book.GetId()</a> </h3>
+    <h4><a href='/book/@book.GetId()'>@book.GetId()</a> </h4>
   }
   </td>
     <td>
           @foreach (Book book in @Book.GetAll())
   {
-    <h3>@book.GetName() </h3>
+    <h4>@book.GetName() </h4>
   }
     </td>
        <td>
@@ -48,7 +48,7 @@
     <td>
           @foreach (Book book in @Book.GetAll())
   {
-    <h3>@book.GetBookCopies()</h3>
+    <h4>@book.GetBookCopies()</h4>
   }
     </td>
   </tr>
@@ -93,6 +93,15 @@
   <br/>
   <input id="BookName" name="bookName" type="text">
    <br/>
+   <label for="BookName">bookCategory</label>
+  <br/>
+    <select class="form-control" id="bookCategoryList" name="bookCategory" style="width: 230px">
+      <option value="12">12</option>
+       <option value="11">11</option>
+    
+
+  </select>
+  <br/>
  <label for="BookName">authorId</label>
   <br/>
   <input id="authorId" name="authorId" type="text">
@@ -101,6 +110,7 @@
     <br/>
   <input id="BookCopies" name="bookCopies" type="text">
   <br/> <br/>
+  
   <button type="submit" class='btn btn-success'> Confirm</button>
   </form>
  

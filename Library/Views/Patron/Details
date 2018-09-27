@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout"; 
+}
+@using Library.Models;
+
+<div class='container'>
+  <h2>All the book For person: @Model["patron"].GetpatronName()</h2>
+  <hr/>
+  <ul>
+    @foreach (var book in @Model["book"])
+    {
+      <h4><a href="/book/@book.GetbookId()">@book.GetbookName()</a></h4>
+    }
+  </ul>
+  
+    <form action="/patron/@Model["patron"].GetpatronId()" method="post">
+       <label for="patronName">Add a new book to @Model["patron"].GetpatronName()</label>
+       <br/>
+      <input id="patronName" name="bookName" type="text">
+     
+      <button type="submit" class='btn btn-success'>Confirm</button>
+    </form>
+    <br/><br/>
+    <a href='/patron'><button class='btn btn-warning'>Back patron</button></a>
+    <a href='/'><button class='btn btn-success'>Back Home</button></a>
+       
+
+  <!-- <a href='/patrons/@Model["patron"].GetpatronId()/book/new'><button class='btn btn-danger'>Add a book for this patron</button></a> -->
+</div>
